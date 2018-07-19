@@ -1,0 +1,10 @@
+applications:
+- disk_quota: 1024M
+  host: cloudant-test-20180718-ippei0605
+  name: cloudant-test-20180718-ippei0605
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 256M
+  services:
+  - cloudant-ippei0605-alias

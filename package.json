@@ -1,0 +1,39 @@
+{
+  "name": "cloudant-test-20180718",
+  "version": "0.0.1",
+  "description": "Cloudant Test (Published 2018/7/18)",
+  "author": "Ippei SUZUKI",
+  "private": true,
+  "engines": {
+    "node": "8.9.4"
+  },
+  "config": {
+    "api_endpoint": "https://api.ng.bluemix.net",
+    "app_name": "cloudant-test-20180718-ippei0605",
+    "cloudant_name": "cloudant-ippei0605",
+    "cloudant_alias_name": "cloudant-ippei0605-alias",
+    "db_name": "alice",
+    "doc_name": "rabbit"
+  },
+  "scripts": {
+    "login": "ibmcloud login -a $npm_package_config_api_endpoint && ibmcloud target --cf",
+    "service_create": "ibmcloud resource service-instance-create $npm_package_config_cloudant_name cloudant lite us-south && ibmcloud resource service-alias-create $npm_package_config_cloudant_alias_name --instance-name $npm_package_config_cloudant_name",
+    "push": "ibmcloud app push $npm_package_config_app_name",
+    "postinstall": "node postinstall",
+    "start": "node app",
+    "page": "opener https://$npm_package_config_app_name.mybluemix.net/",
+    "vcap_services": "ibmcloud app env $npm_package_config_app_name | node node_modules/cfenv-one-liner -p VCAP_SERVICES"
+  },
+  "dependencies": {
+    "@cloudant/cloudant": "^2.3.0",
+    "cfenv": "^1.1.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0",
+    "vcap_services": "^0.4.0"
+  },
+  "devDependencies": {
+    "cfenv-one-liner": "0.0.2",
+    "opener": "^1.4.3"
+  }
+}
