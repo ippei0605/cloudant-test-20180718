@@ -19,6 +19,8 @@ IBM Cloud の Cloudant がリソースグループに対応しました。現在
     | app_name            | cloudant-test-20180718-ippei0605 | アプリ名 (米国南部でユニークなので変更してください) |
     | cloudant_name       | cloudant-ippei0605               | Cloudant のインスタンス名 (変更しなくても大丈夫です) |
     | cloudant_alias_name | cloudant-ippei0605-alias         | Cloudant のエイリアス名 (変更しなくても大丈夫です) |
+    | db_name             | alice                            | 作成するデータベース名 (変更しなくても大丈夫です) |
+    | doc_name            | rabbit                           | 登録する文書名 (変更しなくても大丈夫です) |
 
 1. [manifest.yml](server/manifest.yml) をご自身の環境に合わせて変更してください。
 
