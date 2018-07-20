@@ -93,3 +93,10 @@ IBM Cloud の Cloudant がリソースグループに対応しました。現在
       ]
   });
   ```
+
+* 負荷テスト
+  - Cloudant Lite プランは次の制約があります。load-test-get.js で 20回以上の get documents (lookups) を並列実行して、エラーがでないことを確認しました。 `npm test 100` などで実行できます。
+    - 20 Lookups/sec
+    - 10 Writes/sec
+    - 5 Queries/sec
+  - リトライの有無は確認できませんが、retry パラメータを削除すると、私の環境では 26回程度で `too_many_requests` エラーになりましたので、 retry プラグインは有効だと判断できます。

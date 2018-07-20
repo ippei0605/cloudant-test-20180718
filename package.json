@@ -21,6 +21,7 @@
     "push": "ibmcloud app push $npm_package_config_app_name",
     "postinstall": "node postinstall",
     "start": "node app",
+    "test": "node load-test-get",
     "page": "opener https://$npm_package_config_app_name.mybluemix.net/",
     "vcap_services": "ibmcloud app env $npm_package_config_app_name | node node_modules/cfenv-one-liner -p VCAP_SERVICES"
   },
