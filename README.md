@@ -66,7 +66,7 @@ IBM Cloud の Cloudant がリソースグループに対応しました。現在
     ```
 
 * サービスインスタンスのエイリアス
-  - Dashboard だとアプリから直接接続するサービス (リソースグループ) を指定できますが、コマンドや manifest.yml でバインドする場合は、Cloudfoundry Service に エイリアスを作成する必要があります。
+  - Dashboard だとアプリから直接接続するサービス (リソースグループ) を指定できます。その際、自動的に同名のエイリアスが CloudFoundry Service に作成されます。コマンドや manifest.yml でバインドする場合は、Cloudfoundry Service にエイリアスを作成する必要があります。
 
     ```
     $ ibmcloud resource service-alias-create cloudant-ippei0605-alias --instance-name cloudant-ippei0605
